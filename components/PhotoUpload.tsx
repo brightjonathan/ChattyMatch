@@ -3,11 +3,11 @@
 import { uploadProfilePhoto } from "@/lib/actions/profile";
 import { useRef, useState } from "react";
 
-export default function PhotoUpload({
+const  PhotoUpload = ({
   onPhotoUploaded,
 }: {
   onPhotoUploaded: (url: string) => void;
-}) {
+}) => {
   const [uploading, setUploading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -91,3 +91,6 @@ export default function PhotoUpload({
     </div>
   );
 }
+
+
+export default PhotoUpload;

@@ -5,7 +5,8 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function AuthPage() {
+const AuthPage =()=> {
+
   const [isSignUp, setIsSignUp] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -131,3 +132,5 @@ export default function AuthPage() {
     </div>
   );
 }
+
+export default AuthPage;

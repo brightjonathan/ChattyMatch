@@ -3,7 +3,7 @@
 import { UserProfile } from "@/app/profile/page";
 import { createClient } from "../supabase/server";
 
-export async function getCurrentUserProfile() {
+export const getCurrentUserProfile = async()=> {
   const supabase = await createClient();
 
   const {
@@ -28,7 +28,7 @@ export async function getCurrentUserProfile() {
   return profile;
 }
 
-export async function updateUserProfile(profileData: Partial<UserProfile>) {
+export const updateUserProfile = async (profileData: Partial<UserProfile>)=> {
   const supabase = await createClient();
 
   const {
@@ -60,7 +60,7 @@ export async function updateUserProfile(profileData: Partial<UserProfile>) {
   return { success: true };
 }
 
-export async function uploadProfilePhoto(file: File) {
+export const uploadProfilePhoto = async(file: File) =>{
   const supabase = await createClient();
 
   const {

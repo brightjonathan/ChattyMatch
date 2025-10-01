@@ -18,11 +18,11 @@ interface VideoCallProps {
   isIncoming?: boolean;
 }
 
-export default function VideoCall({
+const VideoCall = ({
   callId,
   onCallEnd,
   isIncoming = false,
-}: VideoCallProps) {
+}: VideoCallProps) => {
   const [client, setClient] = useState<StreamVideoClient | null>(null);
   const [call, setCall] = useState<Call | null>(null);
   const [loading, setLoading] = useState(true);
@@ -148,3 +148,6 @@ export default function VideoCall({
     </div>
   );
 }
+
+
+export default VideoCall;

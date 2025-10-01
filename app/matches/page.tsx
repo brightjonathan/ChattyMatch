@@ -7,7 +7,7 @@ import MatchCard from "@/components/MatchCard";
 import MatchButtons from "@/components/MatchButtons";
 import MatchNotification from "@/components/MatchNotification";
 
-export default function MatchesPage() {
+const MatchesPage = ()=> {
   const [potentialMatches, setPotentialMatches] = useState<UserProfile[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -162,3 +162,5 @@ export default function MatchesPage() {
     </div>
   );
 }
+
+export default MatchesPage;

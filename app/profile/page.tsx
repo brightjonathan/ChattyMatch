@@ -33,7 +33,7 @@ export interface UserPreferences {
   gender_preference: ("male" | "female" | "other")[];
 }
 
-export default function ProfilePage() {
+const ProfilePage =()=> {
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -268,3 +268,6 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+
+export default ProfilePage;

@@ -2,7 +2,8 @@
 import { useAuth } from "@/contexts/auth-context";
 import Link from "next/link";
 
-export default function Home() {
+
+const Home =()=> {
   const { user, loading } = useAuth();
 
   if (loading) {
@@ -94,3 +95,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

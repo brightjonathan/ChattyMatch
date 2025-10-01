@@ -7,11 +7,11 @@ interface MatchNotificationProps {
   onStartChat: () => void;
 }
 
-export default function MatchNotification({
+const MatchNotification =({
   match,
   onClose,
   onStartChat,
-}: MatchNotificationProps) {
+}: MatchNotificationProps) => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
 
   useEffect(() => {
@@ -97,3 +97,5 @@ export default function MatchNotification({
     </div>
   );
 }
+
+export default MatchNotification;

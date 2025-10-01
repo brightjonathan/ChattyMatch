@@ -24,13 +24,13 @@ interface Message {
   user_id: string;
 }
 
-export default function StreamChatInterface({
+const StreamChatInterface = ({
   otherUser,
   ref,
 }: {
   otherUser: UserProfile;
   ref: RefObject<{ handleVideoCall: () => void } | null>;
-}) {
+})=> {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [currentUserId, setCurrentUserId] = useState<string>("");
@@ -472,3 +472,6 @@ export default function StreamChatInterface({
     </div>
   );
 }
+
+
+export default StreamChatInterface;

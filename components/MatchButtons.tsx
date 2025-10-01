@@ -3,7 +3,7 @@ interface MatchButtonsProps {
   onPass: () => void;
 }
 
-export default function MatchButtons({ onLike, onPass }: MatchButtonsProps) {
+const MatchButtons = ({ onLike, onPass }: MatchButtonsProps)  => {
   return (
     <div className="flex items-center justify-center gap-8">
       <button
@@ -44,3 +44,6 @@ export default function MatchButtons({ onLike, onPass }: MatchButtonsProps) {
     </div>
   );
 }
+
+
+export default MatchButtons;

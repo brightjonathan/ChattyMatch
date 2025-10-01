@@ -3,7 +3,7 @@
 import { UserProfile } from "@/app/profile/page";
 import { createClient } from "../supabase/server";
 
-export async function getPotentialMatches(): Promise<UserProfile[]> {
+export const getPotentialMatches = async (): Promise<UserProfile[]>=> {
   const supabase = await createClient();
   const {
     data: { user },
@@ -65,7 +65,7 @@ export async function getPotentialMatches(): Promise<UserProfile[]> {
   return filteredMatches;
 }
 
-export async function likeUser(toUserId: string) {
+export const likeUser = async (toUserId: string)=> {
   const supabase = await createClient();
   const {
     data: { user },
@@ -116,7 +116,7 @@ export async function likeUser(toUserId: string) {
   return { success: true, isMatch: false };
 }
 
-export async function getUserMatches() {
+export const getUserMatches = async()=> {
   const supabase = await createClient();
   const {
     data: { user },

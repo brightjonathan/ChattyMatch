@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { calculateAge } from "@/lib/helpers/calculate-age";
 
-export default function MatchesListPage() {
+const MatchesListPage =()=> {
   const [matches, setMatches] = useState<UserProfile[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -112,3 +112,5 @@ export default function MatchesListPage() {
     </div>
   );
 }
+
+export default MatchesListPage;

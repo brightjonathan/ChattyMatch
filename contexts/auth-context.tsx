@@ -12,14 +12,14 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
+export const AuthProvider = ({ children }: { children: React.ReactNode })=> {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const supabase = createClient();
   const router = useRouter();
 
   useEffect(() => {
-    async function checkUser() {
+    const checkUser = async()=> {
       try {
         const {
           data: { session },
@@ -44,14 +44,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     checkUser();
   }, []);
 
-  async function signOut() {
-    try {
-      await supabase.auth.signOut();
-      router.push("/auth");
-    } catch (error) {
-      console.error("Error signing out:", error);
-    }
+const signOut = async () => {
+  try {
+    const confirmSignOut = window.confirm("Are you sure you want to sign out?");
+    if (!confirmSignOut) return; // cancel if user clicks "Cancel"
+
+    await supabase.auth.signOut();
+    router.push("/auth");
+  } catch (error) {
+    console.error("Error signing out:", error);
   }
+};
 
   return (
     <AuthContext.Provider value={{ user, loading, signOut }}>
@@ -60,10 +63,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function useAuth() {
+export const useAuth =()=> {
   const context = useContext(AuthContext);
   if (context === undefined) {
     throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
-}
+};

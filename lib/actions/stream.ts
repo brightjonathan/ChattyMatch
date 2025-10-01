@@ -3,7 +3,7 @@
 import { StreamChat } from "stream-chat";
 import { createClient } from "../supabase/server";
 
-export async function getStreamUserToken() {
+export const getStreamUserToken = async()=> {
   const supabase = await createClient();
 
   const {
@@ -46,7 +46,7 @@ export async function getStreamUserToken() {
   };
 }
 
-export async function createOrGetChannel(otherUserId: string) {
+export const createOrGetChannel = async (otherUserId: string)=> {
   const supabase = await createClient();
 
   const {
@@ -126,7 +126,7 @@ export async function createOrGetChannel(otherUserId: string) {
   };
 }
 
-export async function createVideoCall(otherUserId: string) {
+export const createVideoCall = async(otherUserId: string)=> {
   const supabase = await createClient();
 
   const {
@@ -165,7 +165,7 @@ export async function createVideoCall(otherUserId: string) {
   return { callId, callType: "default" };
 }
 
-export async function getStreamVideoToken() {
+export const getStreamVideoToken = async() => {
   const supabase = await createClient();
 
   const {

@@ -7,8 +7,9 @@ import { useRouter } from "next/navigation";
 interface ChatHeaderProps {
   user: UserProfile;
   onVideoCall?: () => void;
-}
-export default function ChatHeader({ user, onVideoCall }: ChatHeaderProps) {
+};
+
+const ChatHeader = ({ user, onVideoCall }: ChatHeaderProps)=> {
   const router = useRouter();
   return (
     <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4">
@@ -79,3 +80,5 @@ export default function ChatHeader({ user, onVideoCall }: ChatHeaderProps) {
     </div>
   );
 }
+
+export default ChatHeader;

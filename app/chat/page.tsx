@@ -13,7 +13,7 @@ interface ChatData {
   unreadCount: number;
 }
 
-export default function ChatPage() {
+const  ChatPage = ()=> {
   const [chats, setChats] = useState<ChatData[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -149,3 +149,5 @@ export default function ChatPage() {
     </div>
   );
 }
+
+export default ChatPage;

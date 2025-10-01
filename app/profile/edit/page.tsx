@@ -8,7 +8,7 @@ import {
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function EditProfilePage() {
+const EditProfilePage =()=> {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -276,3 +276,6 @@ export default function EditProfilePage() {
     </div>
   );
 }
+
+export default EditProfilePage;
+

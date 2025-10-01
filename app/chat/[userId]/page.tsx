@@ -8,7 +8,7 @@ import { getUserMatches } from "@/lib/actions/matches";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-export default function ChatConversationPage() {
+const ChatConversationPage = ()=> {
   const [otherUser, setOtherUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
@@ -99,3 +99,5 @@ export default function ChatConversationPage() {
     </div>
   );
 }
+
+export default ChatConversationPage;
