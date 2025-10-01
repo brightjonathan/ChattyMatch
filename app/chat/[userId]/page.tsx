@@ -84,7 +84,7 @@ const ChatConversationPage = ()=> {
 
   return (
     <div className="h-screen bg-gradient-to-br from-pink-50 to-red-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="max-w-4xl mx-auto h-full flex flex-col">
+      <div className="max-w-4xl mx-auto h-full flex flex-col pt-[12vh]">
         <ChatHeader
           user={otherUser}
           onVideoCall={() => {
