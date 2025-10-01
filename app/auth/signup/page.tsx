@@ -6,9 +6,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const AuthPage =()=> {
+const SignupPage = () => {
 
-  const [isSignUp, setIsSignUp] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -30,13 +29,18 @@ const AuthPage =()=> {
     setError("");
 
     try {
-      
-        const { error } = await supabase.auth.signInWithPassword({
+     
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
         });
+
         if (error) throw error;
-      } catch (error: unknown) {
+        if (data.user && !data.session) {
+          setError("Please check your email for a confirmation link");
+          return;
+        }
+      }  catch (error: unknown) {
       if (error instanceof Error) {
     setError(error.message);
   } else {
@@ -55,7 +59,7 @@ const AuthPage =()=> {
             ChattyMatch
           </h1>
           <p className="text-gray-600 dark:text-gray-400">
-            Sign in to your account
+            Create Your Account
           </p>
         </div>
 
@@ -107,21 +111,21 @@ const AuthPage =()=> {
             disabled={loading}
             className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 disabled:opacity-50"
           >
-            {loading ? "Loading..." : "Sign In"}
+            {loading ? "Loading..." : "Sign Up" }
           </button>
         </form>
 
         <div className="text-center">
-          <Link
-            href={'/auth/signup'}
+          <Link 
+            href={'/auth'}
             className="text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 text-sm"
-          > 
-          Don't have an account? Sign up
+          >
+            Already have an account? Sign in
           </Link>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default AuthPage;
+export default SignupPage;

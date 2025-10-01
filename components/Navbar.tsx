@@ -1,6 +1,7 @@
 "use client";
 import { useAuth } from "@/contexts/auth-context";
 import Link from "next/link";
+import { FaBarsStaggered } from "react-icons/fa6";
 
 const Navbar = ()=> {
   const { signOut, user } = useAuth();
@@ -17,7 +18,7 @@ const Navbar = ()=> {
           </Link>
 
           {/* Only show navigation links if user is authenticated */}
-          {user && (
+          {user ?  (
             <div className="hidden md:flex items-center space-x-8">
               <Link
                 href="/matches"
@@ -37,6 +38,15 @@ const Navbar = ()=> {
               >
                 Messages
               </Link>
+              <Link
+                href="/profile"
+                className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors duration-200"
+              >
+                Profile
+              </Link>
+            </div>
+          ) : (
+            <div className="hidden md:flex items-center space-x-8">
               <Link
                 href="/profile"
                 className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors duration-200"

@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "otbbzbbtaateooytxvdw.supabase.co", // ✅ new project
+        hostname: "otbbzbbtaateooytxvdw.supabase.co", // new project
       },
       // Optional: wildcard for ANY Supabase project
       {
@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
   },
 
   eslint: {
-    // ✅ This allows production builds to succeed even if ESLint errors exist
+    // This allows production builds to succeed even if ESLint errors exist
     ignoreDuringBuilds: true,
   },
 };
