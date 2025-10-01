@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 import { AuthProvider } from "@/contexts/auth-context";
 import Navbar from "@/components/Navbar";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
           <div className="h-full flex flex-col">
             <Navbar />
             {children}
+             <Analytics />
           </div>
         </AuthProvider>
       </body>
