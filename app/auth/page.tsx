@@ -22,7 +22,7 @@ const AuthPage =()=> {
     }
   }, [user, authLoading, router]);
 
-  async function handleAuth(e: React.FormEvent) {
+  const handleAuth = async (e: React.FormEvent)=> {
     e.preventDefault();
 
     setLoading(true);
@@ -47,8 +47,12 @@ const AuthPage =()=> {
         });
         if (error) throw error;
       }
-    } catch (error: any) {
-      setError(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+    setError(error.message);
+  } else {
+    setError("An unknown error occurred");
+  }
     } finally {
       setLoading(false);
     }
