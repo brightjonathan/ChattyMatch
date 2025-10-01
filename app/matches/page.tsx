@@ -85,7 +85,7 @@ const MatchesPage = ()=> {
             No more profiles to show
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Check back later for new matches, or try adjusting your preferences!
+            Check back later for new matches, or try signing in!
           </p>
           <button
             onClick={() => setCurrentIndex(0)}
