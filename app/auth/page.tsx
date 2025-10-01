@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 
 const AuthPage =()=> {
 
-  const [isSignUp, setIsSignUp] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);

@@ -19,6 +19,7 @@ const Navbar = ()=> {
 
           {/* Only show navigation links if user is authenticated */}
           {user ?  (
+            <>
             <div className="hidden md:flex items-center space-x-8">
               <Link
                 href="/matches"
@@ -41,22 +42,12 @@ const Navbar = ()=> {
               <Link
                 href="/profile"
                 className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors duration-200"
-              >
+                >
                 Profile
               </Link>
             </div>
-          ) : (
-            <div className="hidden md:flex items-center space-x-8">
-              <Link
-                href="/profile"
-                className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors duration-200"
-              >
-                Profile
-              </Link>
-            </div>
-          )}
 
-          {user ? (
+            {/* BUTTON PART */}
             <button
               onClick={signOut}
               className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-medium rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-md hover:shadow-lg"
@@ -76,14 +67,29 @@ const Navbar = ()=> {
               </svg>
               Sign Out
             </button>
+            </>
           ) : (
+            <>
+            <div className="hidden md:flex items-center space-x-8">
+              <Link
+                href="/about"
+                className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors duration-200"
+                >
+                About
+              </Link>
+            </div>
+
+
+             {/* BUTTON PART */}
             <Link
               href="/auth"
               className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-500 to-red-500 text-white text-sm font-medium rounded-lg hover:from-pink-600 hover:to-red-600 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Sign In
             </Link>
+            </>
           )}
+
         </div>
       </div>
     </nav>
