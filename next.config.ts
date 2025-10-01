@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "imljzgcuelzzzncfzlnc.supabase.co",
       },
+      {
+        protocol: "https",
+        hostname: "otbbzbbtaateooytxvdw.supabase.co", // ✅ new project
+      },
+      // Optional: wildcard for ANY Supabase project
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
+      },
     ],
   },
 
@@ -22,5 +31,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
-
