@@ -118,7 +118,7 @@ const MatchesPage = ()=> {
               title="Go back"
             >
               <svg
-                className="w-6 h-6 text-gray-700 dark:text-gray-300"
+                className="w-6 h-6 text-gray-700 dark:text-gray-300 m-[6vh]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

@@ -22,7 +22,7 @@ const Home =()=> {
         <div className="relative container mx-auto px-6 py-20 lg:py-32">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6">
-              Find Your Perfect
+              Find Your Match  <span className="text-[#46b35a]">with</span> 
               <span className="block bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                 ChattyMatch
               </span>
